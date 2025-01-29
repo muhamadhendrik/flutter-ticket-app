@@ -2,12 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ticket_app/base/bottom_nav_bar.dart';
 
 void main() {
-  // var myList = [
-  //   "Flutter",
-  //   "Laravel",
-  //   "PHP",
-  // ];
-  
   runApp(const MyApp());
 }
 

@@ -1,5 +1,9 @@
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ticket_app/base/res/media.dart';
 import 'package:flutter_ticket_app/base/res/styles/app_styles.dart';
+import 'package:flutter_ticket_app/base/widgets/app_double_text.dart';
+import 'package:flutter_ticket_app/base/widgets/ticket_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,9 +11,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppStyles.bgColor,
       //we want scrollable efect
       body: ListView(
         children: [
+          const SizedBox(
+            height: 40,
+          ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -31,22 +39,40 @@ class HomeScreen extends StatelessWidget {
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.red,
-                      ),
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage(AppMedia.logo))),
                     )
                   ],
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Search Icon"),
-                    Text("Empty space"),
-                  ],
-                )
+                const SizedBox(
+                  height: 25,
+                ),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xfff4f6fd),
+                  ),
+                  child: const Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        FluentSystemIcons.ic_fluent_search_regular,
+                        color: Color(0xffbfc205),
+                      ),
+                      Text("Search"),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 40),
+                const AppDoubleText(
+                    bigText: 'Upcoming Flights', smallText: 'View all'),
+                TicketView(),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
