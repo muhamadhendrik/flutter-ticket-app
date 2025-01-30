@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ticket_app/base/utils/all_json.dart';
+import 'package:flutter_ticket_app/base/widgets/ticket_view.dart';
 
 class AllTickets extends StatelessWidget {
   const AllTickets({super.key});
@@ -10,9 +12,19 @@ class AllTickets extends StatelessWidget {
         title: const Text("All Tickets"),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text('All Tickets'),
+      body: ListView(
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              children: ticketList
+                  .map((singleTicket) => Container(
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: TicketView(ticket: singleTicket, wholeScreen: true,)))
+                  .toList(),
+            ),
+          )
+        ],
       ),
     );
   }
-} 
+}
