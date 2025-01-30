@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Ticket Application',
       routes: {
         "/": (context) => const BottomNavBar(),
-        "all_tickets": (context) => const AllTickets(),
+        "/all_tickets": (context) => const AllTickets(),
       },
     );
   }
