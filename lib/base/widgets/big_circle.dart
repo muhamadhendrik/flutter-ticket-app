@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ticket_app/base/res/styles/app_styles.dart';
 
 class BigCircle extends StatelessWidget {
-  final isRight;
+  final bool isRight;
   const BigCircle({super.key, required this.isRight});
 
   @override
